@@ -1,0 +1,86 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    color: #333;
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+}
+.main{
+    background: #f1f1f1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+}
+.form{
+    width: 360px;
+    align-self: center;
+    text-align: center;
+    min-height: 100px;
+    margin-top: 40px;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius:2px;
+    box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1)
+
+}
+.form .heading{
+    font-size: 24px;
+    padding: 20px;
+}
+.form1-group{
+    display: flex;
+    flex-direction: column;
+    padding-top: 16px;
+}
+.form-label{
+    font-weight: 600;
+}
+
+.form-label, .message{
+    text-align: left;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.form-control{
+    padding: 8px 12px;
+    height: 40px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: none;
+    font-size: 1.4rem;
+}
+
+.form-control:hover{
+    border-color: #1dbfaf;
+}
+
+.form1-group.invalid .form-control{
+    border-color: #f33a58;
+}
+.form1-group .message{
+    color: #f33a58;
+    font-size: 1.2rem;
+    margin-top: 5px;
+    line-height: 1.6rem;
+}
+
+.form-submit{
+    width: 100%;
+    background: #1dbfaf;
+    padding: 12px 16px;
+    color: #fff;
+    border-radius: 7px;
+    border: none;
+    font-size: 1.2rem;
+    margin-top: 16px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.form-submit:hover{
+    opacity: 0.8;
+}

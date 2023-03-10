@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h3 class="heading">SIGN UP</h3>
+
+            <div class="form1-group">
+                <label for="name" class = "form-label">Name</label>
+                <input id = "name" type="text" name = "name" class="form-control" placeholder="VD: Bùi Viết Trường">
+                <p class = "message"></p>
+            </div>
+
+            <div class="form1-group">
+                <label for="email" class = "form-label">Email</label>
+                <input id = "email" type="email" name = "email" class="form-control" placeholder="VD: viettruong0825@gmail.com">
+                <p class = "message"></p>
+            </div>
+
+            <div class="form1-group">
+                <label for="password" class = "form-label">Password</label>
+                <input id = "password" type="password" name = "pass" class="form-control" placeholder="Nhập mật khẩu">
+                <p class = "message"></p>
+            </div>
+
+            <div class="form1-group">
+                <label for="password-confirm" class = "form-label">Confirm password</label>
+                <input id = "confirm-password" type="password" name = "password-confirm" class="form-control" placeholder="Nhập lại mật khẩu">
+                <p class = "message"></p>
+            </div>
+
+            <button class = "form-submit">SIGN UP</button>
+        </form>
+    </div>
+    <script src="validation.js"></script>
+    <script>
+        Validation({
+            form: '#form-1',
+            formGroupSelector: '.form1-group',
+            errorSelector: '.message',
+            rules: [
+                Validation.isRequired('#name', "Vui lòng nhập họ tên"),
+                Validation.isRequired('#email'),
+                Validation.isEmail('#email', "Vui lòng nhập email"),
+                Validation.isRequired('#password'),
+                Validation.isPassword("#password"),
+                Validation.isRequired('#confirm-password'),
+                Validation.checkConfirmPassword("#confirm-password", function () {
+                    return document.querySelector("#form-1 #password").value
+                }, "Mật khẩu nhập vào không chính xác")
+            ],
+            onSubmit: function(data) {
+                console.log(data)
+            }
+        })
+    </script>
+</body>
+</html>
